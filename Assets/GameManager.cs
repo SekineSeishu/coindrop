@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     private int initial_coin;
     [SerializeField]
     private GameObject coinPrefab;
+    [SerializeField]
+    private Text nowcoinText;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        nowcoinText.text = "ÉRÉCÉì:" + nowcoin;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (nowcoin != 0)
